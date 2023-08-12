@@ -1,0 +1,61 @@
+.home {
+  background-color: $color-grey-light-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  &__img {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+    margin: 1rem 1rem;
+  }
+
+  &__name {
+    grid-row: 1;
+    grid-column: 1/-1;
+    align-self: end;
+    justify-self: center;
+    background-color: $color-secondary;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: $font-size-normal;
+    transform: translatey(1rem);
+  }
+
+  &__location,
+  &__room {
+    margin-top: 1rem;
+  }
+
+  &__price,
+  &__location,
+  &__room,
+  &__area {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $color-primary;
+    }
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+  }
+}

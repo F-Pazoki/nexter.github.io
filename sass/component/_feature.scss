@@ -1,0 +1,17 @@
+.feature {
+  display: grid;
+  grid-template-columns: min-content minmax(min-content, 1fr);
+  grid-gap: 1rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4rem;
+    height: 4rem;
+    grid-row: 1 / span 2;
+    transform: translatey(-1rem);
+  }
+
+  &__text {
+    font-size: $font-size-normal;
+  }
+}

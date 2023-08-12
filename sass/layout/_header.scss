@@ -1,0 +1,71 @@
+.header {
+  grid-column: fluid-strat/col-start 6;
+
+  @include respond(phone) {
+    grid-column: fluid-strat/-1;
+  }
+
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.9),
+      rgba($color-secondary, 0.9)
+    ),
+    url("../../img/house-1.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  row-gap: 1.5rem;
+
+  &__logo {
+    max-width: 20rem;
+    justify-self: center;
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start;
+  }
+
+  &__seenon-text {
+    color: $color-grey-light-2;
+    font-size: $font-size-normal;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    column-gap: 0.9rem;
+
+    &::after,
+    &::before {
+      content: "";
+      height: 1px;
+      display: inline-block;
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &__seenon-logos {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+
+    @include respond(tab-land) {
+      gap: 3rem;
+    }
+
+    @include respond(phone) {
+      gap: 1rem;
+    }
+
+    img {
+      max-height: 2rem;
+      filter: brightness(70%);
+
+      @include respond(tab-port) {
+        max-height: 1.5rem;
+      }
+    }
+  }
+}

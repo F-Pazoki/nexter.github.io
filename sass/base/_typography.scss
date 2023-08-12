@@ -1,0 +1,48 @@
+%heading {
+  font-weight: 400;
+}
+
+.heading-1th {
+  @extend %heading;
+  font-size: 5rem;
+  color: $color-grey-light-1;
+}
+
+.heading-2th {
+  @extend %heading;
+  font-size: 4rem;
+
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+}
+
+.heading-3th {
+  @extend %heading;
+  font-size: 2.9rem;
+
+  &--dark {
+    color: $color-primary-dark;
+  }
+
+  &--light {
+    color: $color-primary;
+  }
+}
+
+.heading-4th {
+  @extend %heading;
+  font-size: 2.4rem;
+
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+}

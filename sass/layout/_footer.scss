@@ -1,0 +1,12 @@
+.footer {
+  grid-column: fluid-strat / fluid-end;
+  background-color: $color-secondary;
+  padding: 3rem;
+}
+
+.copy-right {
+  font-size: $font-size-normal;
+  color: #fff;
+  text-align: center;
+  margin-top: 2rem;
+}

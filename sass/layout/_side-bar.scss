@@ -1,0 +1,39 @@
+.side-bar {
+  grid-row: 1/-1;
+
+  @include respond(tab-port) {
+    grid-row: 1;
+    grid-column: 1/-1;
+    text-align: right;
+  }
+
+  background-color: $color-primary-dark;
+  padding: 2rem;
+
+  &__btn {
+    border: 0;
+    background-color: #fff;
+    width: 3rem;
+    height: 0.25rem;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 3rem;
+      height: 0.25rem;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    &::after {
+      transform: translatey(-2rem);
+    }
+
+    &::before {
+      transform: translatey(-1.5rem);
+      @include respond(tab-land) {
+        transform: translateY(-2.5rem);
+      }
+    }
+  }
+}

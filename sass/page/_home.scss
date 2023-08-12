@@ -1,0 +1,71 @@
+.container {
+  display: grid;
+  // grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 80vh repeat(2, min-content);
+
+  grid-template-columns:
+    [side-start] 8rem [side-end fluid-strat] minmax(3rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14.2rem) [col-end])
+    [center-end]
+    minmax(3rem, 1fr) [fluid-end];
+
+  @include respond(tab-port) {
+    grid-template-rows: 6rem 80vh repeat(2, min-content);
+
+    grid-template-columns:
+      [fluid-strat] minmax(3rem, 1fr)
+      [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14.2rem) [col-end]
+      )
+      [center-end]
+      minmax(3rem, 1fr) [fluid-end];
+  }
+
+  @include respond(phone) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+}
+
+.main {
+  grid-column: fluid-strat / fluid-end;
+  display: grid;
+  grid-template-columns:
+    minmax(3rem, 1fr) repeat(
+      8,
+      [col-start-main] minmax(min-content, 14.2rem) [col-end-main]
+    )
+    minmax(3rem, 1fr);
+}
+
+.features {
+  grid-column: 2/ -2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+  margin: 4rem 0;
+}
+
+.homes {
+  grid-column: 2/ -2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.realtours {
+  grid-column: col-start 6 / fluid-end;
+  background-color: $color-secondary;
+  @include respond(phone) {
+    grid-column: fluid-strat/-1;
+  }
+
+  display: grid;
+  row-gap: 2rem;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
